@@ -38,6 +38,16 @@ main,.footer{position:relative;z-index:4}.intro{position:fixed;inset:0;z-index:2
 .math-gate{position:fixed;inset:0;z-index:35;display:grid;place-items:center;padding:20px;background:rgba(1,4,2,.94);backdrop-filter:blur(14px);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .3s,visibility .3s}.math-gate.show{opacity:1;visibility:visible;pointer-events:auto}.math-card{width:min(720px,100%);max-height:min(88vh,850px);overflow:auto;border:1px solid rgba(255,51,75,.48);background:linear-gradient(145deg,rgba(35,12,17,.98),rgba(5,9,7,.99));padding:clamp(24px,5vw,48px);text-align:center;position:relative;box-shadow:0 0 55px rgba(255,51,75,.09)}.math-card .section-kicker{color:#ff7181}.math-symbol{font:clamp(38px,7vw,64px) var(--display);color:var(--red);margin:12px 0;text-shadow:0 0 24px rgba(255,51,75,.2)}.math-card h2{font:clamp(34px,6vw,56px)/.95 var(--display);text-transform:uppercase;margin:12px 0 18px}.math-problem{font:clamp(14px,2vw,18px)/1.8 var(--mono);color:#edf1ee;margin:24px auto;max-width:570px}.math-explain{font:10px/1.8 var(--mono);letter-spacing:.06em;color:#a7b2aa;border-top:1px solid rgba(255,255,255,.1);padding-top:18px}.math-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:24px}.math-count{font:10px var(--mono);color:#ff7181;letter-spacing:.12em;margin-top:15px}.math-gate .btn.red{border-color:rgba(255,51,75,.7)}
 
 .trailer-section{width:min(820px,100%);margin:26px auto 34px;text-align:left;border:1px solid rgba(125,255,154,.25);background:rgba(125,255,154,.025);padding:clamp(14px,3vw,24px)}.trailer-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:14px}.trailer-heading h3{margin:0;font:clamp(22px,4vw,30px)/1 var(--display);letter-spacing:.06em;text-transform:uppercase;color:#e9efeb}.trailer-heading span{font:9px var(--mono);letter-spacing:.12em;color:var(--green)}.trailer-frame{position:relative;width:100%;aspect-ratio:16/9;background:#020403;border:1px solid rgba(125,255,154,.2);overflow:hidden}.trailer-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}.trailer-note{font:9px/1.7 var(--mono);letter-spacing:.04em;color:#84908a;margin:12px 0 0}
+
+/* Larger, more prominent Doomsday countdown */
+#countdownSection{padding-top:clamp(64px,9vw,118px);padding-bottom:clamp(70px,10vw,130px);text-align:center;background:radial-gradient(ellipse at center,rgba(32,200,91,.11),transparent 68%)}
+#countdownHeading{font-size:clamp(15px,2.2vw,22px)!important;letter-spacing:.24em!important;margin-bottom:clamp(22px,4vw,38px)!important;text-shadow:0 0 20px rgba(125,255,154,.25)}
+#countdownSection .countdown{width:min(100%,1000px);gap:clamp(8px,2vw,20px);margin:0 auto}
+#countdownSection .countdown-unit{padding:clamp(20px,4vw,42px) 8px;border-color:rgba(125,255,154,.38);background:linear-gradient(160deg,rgba(125,255,154,.09),rgba(125,255,154,.025));box-shadow:inset 0 0 24px rgba(125,255,154,.025),0 0 28px rgba(0,0,0,.16)}
+#countdownSection .countdown-number{font-size:clamp(42px,8vw,88px);letter-spacing:.015em;text-shadow:0 0 24px rgba(125,255,154,.13)}
+#countdownSection .countdown-unit small{font-size:clamp(10px,1.4vw,14px);margin-top:clamp(10px,2vw,18px);letter-spacing:.18em}
+#countdownSection .countdown-finished{font-size:clamp(13px,2vw,18px);padding:22px;width:100%}
+@media(max-width:560px){#countdownSection{padding-top:62px;padding-bottom:70px}#countdownSection .countdown{gap:6px}#countdownSection .countdown-unit{padding:20px 3px}#countdownSection .countdown-number{font-size:clamp(30px,9vw,48px)}#countdownSection .countdown-unit small{font-size:8px;letter-spacing:.08em}}
 </style>
 </head>
 <body>
@@ -73,8 +83,20 @@ main,.footer{position:relative;z-index:4}.intro{position:fixed;inset:0;z-index:2
       <div class="hud-label one">THREAT ANALYSIS<strong>LEVEL: UNKNOWN</strong></div><div class="hud-label two">ENERGY SIGNATURE<strong>GAMMA / EMERALD</strong></div><div class="hud-label three">SUBJECT STATUS<strong>MONITORING...</strong></div><div class="crosshair"></div><div class="figure-label"><strong>FIG. 01 // UNKNOWN ENTITY</strong>VISUAL MATCH: INCONCLUSIVE</div>
     </div>
   </section>
+  <section class="section invite-section reveal" id="countdownSection" aria-labelledby="countdownHeading">
+    <div class="section-kicker" id="countdownHeading">COUNTDOWN TO DOOMSDAY</div>
+    <div class="countdown" id="doomsdayCountdown" aria-label="Countdown to December 18, 2026"><div class="countdown-unit"><span class="countdown-number" id="countDays">--</span><small>DAYS</small></div><div class="countdown-unit"><span class="countdown-number" id="countHours">--</span><small>HOURS</small></div><div class="countdown-unit"><span class="countdown-number" id="countMinutes">--</span><small>MINUTES</small></div><div class="countdown-unit"><span class="countdown-number" id="countSeconds">--</span><small>SECONDS</small></div></div>
+  </section>
+  <section class="section invite-section reveal" id="trailerSection">
+    <div class="section-kicker">01 // Official trailer</div>
+    <div class="trailer-section" aria-labelledby="trailerTitle">
+      <div class="trailer-heading"><h3 id="trailerTitle">Official Trailer Transmission</h3><span>VIDEO FILE // AV-12</span></div>
+      <div class="trailer-frame"><iframe src="https://www.youtube-nocookie.com/embed/irVNGjRFZGk" title="Avengers: Doomsday trailer on YouTube" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+      <p class="trailer-note">Trailer hosted by YouTube. Select play to watch; playback may depend on YouTube availability and embed settings.</p>
+    </div>
+  </section>
   <section class="section reveal" id="mission">
-    <div class="section-head"><div><div class="section-kicker">01 // Mission parameters</div><h2 class="section-title">Classified mission file</h2></div><div class="section-index">AV-12 / DOSSIER</div></div>
+    <div class="section-head"><div><div class="section-kicker">02 // Mission parameters</div><h2 class="section-title">Classified mission file</h2></div><div class="section-index">AV-12 / DOSSIER</div></div>
     <div class="locked-file" id="lockedFile">
       <div class="lock-symbol">⌑</div>
       <div class="locked-kicker">ENCRYPTED FILE DETECTED</div>
@@ -96,14 +118,9 @@ main,.footer{position:relative;z-index:4}.intro{position:fixed;inset:0;z-index:2
       </div>
     </div>
   </section>
+
   <section class="section invite-section reveal" id="invitation">
-    <div class="section-kicker">02 // Incoming personal message</div>
-    <p class="countdown-label">COUNTDOWN TO DOOMSDAY</p><div class="countdown" id="doomsdayCountdown" aria-label="Countdown to December 18, 2026"><div class="countdown-unit"><span class="countdown-number" id="countDays">--</span><small>DAYS</small></div><div class="countdown-unit"><span class="countdown-number" id="countHours">--</span><small>HOURS</small></div><div class="countdown-unit"><span class="countdown-number" id="countMinutes">--</span><small>MINUTES</small></div><div class="countdown-unit"><span class="countdown-number" id="countSeconds">--</span><small>SECONDS</small></div></div>
-    <div class="trailer-section" aria-labelledby="trailerTitle">
-      <div class="trailer-heading"><h3 id="trailerTitle">Official Trailer Transmission</h3><span>VIDEO FILE // AV-12</span></div>
-      <div class="trailer-frame"><iframe src="https://www.youtube-nocookie.com/embed/irVNGjRFZGk" title="Avengers: Doomsday trailer on YouTube" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-      <p class="trailer-note">Trailer hosted by YouTube. Select play to watch; playback may depend on YouTube availability and embed settings.</p>
-    </div>
+    <div class="section-kicker">03 // Incoming personal message</div>
     <div class="invite-frame">
       <div class="quote-mark">“</div>
       <div class="invitation-copy"><span class="soft">Out of all the universes, timelines, and possible futures...</span><br><br><span class="highlight">You're the person I'd choose to sit beside.</span><br><br>So, Agent...</div>
