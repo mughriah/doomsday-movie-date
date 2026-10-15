@@ -69,6 +69,8 @@ main,.footer{position:relative;z-index:4}.intro{position:fixed;inset:0;z-index:2
 .topbar{padding:17px clamp(22px,3.4vw,54px);background:rgba(0,4,2,.52);backdrop-filter:blur(8px)}
 .hero{min-height:540px;height:min(70vw,590px);max-width:none;padding:54px clamp(30px,3.4vw,54px) 50px;grid-template-columns:minmax(420px, .85fr) 1.15fr;gap:0;border-bottom:1px solid rgba(125,255,154,.18);overflow:hidden}
 .hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,4,2,.97) 0%,rgba(0,4,2,.9) 34%,rgba(0,4,2,.35) 62%,rgba(0,4,2,.06) 100%),linear-gradient(0deg,rgba(0,4,2,.55),transparent 40%);pointer-events:none;z-index:1}
+/* Extra Dr. Doom artwork in the open right side of the hero. Keep doom_1.jpg beside index.html in the GitHub repository. */
+.hero:after{content:"";position:absolute;z-index:0;top:0;right:0;width:66%;height:100%;background:linear-gradient(90deg,rgba(0,4,2,1) 0%,rgba(0,4,2,.56) 22%,rgba(0,4,2,.12) 58%,rgba(0,4,2,.32) 100%),linear-gradient(0deg,rgba(0,4,2,.35),transparent 35%),url('./doom_1.jpg') center 35%/cover no-repeat;pointer-events:none;opacity:.92;}
 .hero-copy{z-index:2;max-width:660px}
 .hero .eyebrow{font-size:10px}
 .hero h1{font-size:clamp(64px,6.8vw,104px);line-height:.78;margin:24px 0 22px}
@@ -106,6 +108,7 @@ main,.footer{position:relative;z-index:4}.intro{position:fixed;inset:0;z-index:2
 @media(max-width:900px){
  .hero{height:auto;min-height:540px;grid-template-columns:1fr;padding:58px 26px 60px}
  .hero:before{background:linear-gradient(90deg,rgba(0,4,2,.92),rgba(0,4,2,.62)),linear-gradient(0deg,rgba(0,4,2,.7),transparent)}
+ .hero:after{width:100%;background-position:center;background-image:linear-gradient(90deg,rgba(0,4,2,.88),rgba(0,4,2,.48)),linear-gradient(0deg,rgba(0,4,2,.55),transparent 55%),url('./doom_1.jpg');opacity:.58}
  .dashboard-row{grid-template-columns:1fr;padding:26px}
  #mission.section{grid-template-columns:1fr;padding:18px 26px 40px;gap:12px}
  #mission .section-head{min-height:0;padding:12px 8px}
