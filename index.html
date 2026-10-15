@@ -11,7 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#050706;--panel:rgba(12,17,15,.82);--green:#7dff9a;--green2:#20c85b;--red:#ff334b;--silver:#cbd2ce;--muted:#84908a;--line:rgba(125,255,154,.22);--mono:"DM Mono",monospace;--display:"Barlow Condensed",sans-serif;--body:"Manrope",sans-serif}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:#e9efeb;font-family:var(--body);overflow-x:hidden}button{font:inherit;cursor:pointer}button:focus-visible{outline:2px solid var(--green);outline-offset:4px}::selection{background:var(--green);color:#07100a}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:#e9efeb;font-family:var(--body);overflow-x:hidden}button{font:inherit;cursor:pointer} body, a, input, select, textarea{cursor:auto} body, a, input, select, textarea{cursor:auto} body, a, input, select, textarea{cursor:auto}button:focus-visible{outline:2px solid var(--green);outline-offset:4px}::selection{background:var(--green);color:#07100a}
 #particles{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:1;opacity:.65}.noise{position:fixed;inset:0;pointer-events:none;z-index:2;opacity:.055;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E")}
 .ambient{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;background:radial-gradient(ellipse at 78% 35%,rgba(27,100,48,.16),transparent 38%),radial-gradient(ellipse at 8% 80%,rgba(128,15,30,.13),transparent 32%),linear-gradient(120deg,#050706 0%,#080d0a 48%,#040605 100%)}
 .ambient:after{content:"";position:absolute;inset:-30%;background:conic-gradient(from 30deg at 65% 40%,transparent 0 35%,rgba(60,255,118,.035) 40%,transparent 50% 100%);animation:slowturn 34s linear infinite}
@@ -37,17 +37,98 @@ main,.footer{position:relative;z-index:4}.intro{position:fixed;inset:0;z-index:2
 
 .math-gate{position:fixed;inset:0;z-index:35;display:grid;place-items:center;padding:20px;background:rgba(1,4,2,.94);backdrop-filter:blur(14px);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .3s,visibility .3s}.math-gate.show{opacity:1;visibility:visible;pointer-events:auto}.math-card{width:min(720px,100%);max-height:min(88vh,850px);overflow:auto;border:1px solid rgba(255,51,75,.48);background:linear-gradient(145deg,rgba(35,12,17,.98),rgba(5,9,7,.99));padding:clamp(24px,5vw,48px);text-align:center;position:relative;box-shadow:0 0 55px rgba(255,51,75,.09)}.math-card .section-kicker{color:#ff7181}.math-symbol{font:clamp(38px,7vw,64px) var(--display);color:var(--red);margin:12px 0;text-shadow:0 0 24px rgba(255,51,75,.2)}.math-card h2{font:clamp(34px,6vw,56px)/.95 var(--display);text-transform:uppercase;margin:12px 0 18px}.math-problem{font:clamp(14px,2vw,18px)/1.8 var(--mono);color:#edf1ee;margin:24px auto;max-width:570px}.math-explain{font:10px/1.8 var(--mono);letter-spacing:.06em;color:#a7b2aa;border-top:1px solid rgba(255,255,255,.1);padding-top:18px}.math-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:24px}.math-count{font:10px var(--mono);color:#ff7181;letter-spacing:.12em;margin-top:15px}.math-gate .btn.red{border-color:rgba(255,51,75,.7)}
 
-.trailer-section{width:min(820px,100%);margin:26px auto 34px;text-align:left;border:1px solid rgba(125,255,154,.25);background:rgba(125,255,154,.025);padding:clamp(14px,3vw,24px)}.trailer-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:14px}.trailer-heading h3{margin:0;font:clamp(22px,4vw,30px)/1 var(--display);letter-spacing:.06em;text-transform:uppercase;color:#e9efeb}.trailer-heading span{font:9px var(--mono);letter-spacing:.12em;color:var(--green)}.trailer-frame{position:relative;width:100%;aspect-ratio:16/9;background:#020403;border:1px solid rgba(125,255,154,.2);overflow:hidden}.trailer-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}.trailer-note{font:9px/1.7 var(--mono);letter-spacing:.04em;color:#84908a;margin:12px 0 0}
 
-/* Larger, more prominent Doomsday countdown */
-#countdownSection{padding-top:clamp(64px,9vw,118px);padding-bottom:clamp(70px,10vw,130px);text-align:center;background:radial-gradient(ellipse at center,rgba(32,200,91,.11),transparent 68%)}
-#countdownHeading{font-size:clamp(15px,2.2vw,22px)!important;letter-spacing:.24em!important;margin-bottom:clamp(22px,4vw,38px)!important;text-shadow:0 0 20px rgba(125,255,154,.25)}
-#countdownSection .countdown{width:min(100%,1000px);gap:clamp(8px,2vw,20px);margin:0 auto}
-#countdownSection .countdown-unit{padding:clamp(20px,4vw,42px) 8px;border-color:rgba(125,255,154,.38);background:linear-gradient(160deg,rgba(125,255,154,.09),rgba(125,255,154,.025));box-shadow:inset 0 0 24px rgba(125,255,154,.025),0 0 28px rgba(0,0,0,.16)}
-#countdownSection .countdown-number{font-size:clamp(42px,8vw,88px);letter-spacing:.015em;text-shadow:0 0 24px rgba(125,255,154,.13)}
-#countdownSection .countdown-unit small{font-size:clamp(10px,1.4vw,14px);margin-top:clamp(10px,2vw,18px);letter-spacing:.18em}
-#countdownSection .countdown-finished{font-size:clamp(13px,2vw,18px);padding:22px;width:100%}
-@media(max-width:560px){#countdownSection{padding-top:62px;padding-bottom:70px}#countdownSection .countdown{gap:6px}#countdownSection .countdown-unit{padding:20px 3px}#countdownSection .countdown-number{font-size:clamp(30px,9vw,48px)}#countdownSection .countdown-unit small{font-size:8px;letter-spacing:.08em}}
+/* Dr. Doom throne room background */
+.ambient{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;background:#030504 url('dr_doom_throne.png') center 43% / cover no-repeat}
+.ambient:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(2,5,3,.86) 0%,rgba(2,5,3,.58) 45%,rgba(2,5,3,.52) 100%),linear-gradient(0deg,rgba(2,5,3,.78),transparent 45%,rgba(2,5,3,.28));}
+@media(max-width:650px){.ambient{background-position:center center}.ambient:after{background:linear-gradient(90deg,rgba(2,5,3,.72),rgba(2,5,3,.5)),linear-gradient(0deg,rgba(2,5,3,.72),transparent 55%,rgba(2,5,3,.22))}}
+
+
+/* Doctor Doom-inspired emerald magic cursor (desktop / precise pointers only) */
+@media (pointer:fine) and (prefers-reduced-motion:no-preference){
+  body, body button, body a, body input { cursor:none !important; }
+  #doomCursor{display:block;}
+}
+#doomCursor{display:none;position:fixed;left:0;top:0;width:66px;height:76px;z-index:9999;pointer-events:none;transform:translate(-50%,-52%);filter:drop-shadow(0 0 8px rgba(35,255,83,.75));}
+#doomCursor .cursor-cross{position:absolute;inset:2px -3px 4px;border:1px dashed rgba(79,255,115,.8);border-radius:50%;animation:doomSpin 7s linear infinite reverse;box-shadow:0 0 14px rgba(36,255,89,.2);}
+#doomCursor .cursor-ring{position:absolute;inset:7px 2px 9px;border:1.5px solid rgba(125,255,154,.9);border-radius:50%;transform:rotate(-28deg);animation:doomSpin 3.5s linear infinite;box-shadow:0 0 12px rgba(36,255,89,.55),inset 0 0 10px rgba(36,255,89,.2);}
+#doomCursor .cursor-ring:before,#doomCursor .cursor-ring:after{content:"✦";position:absolute;font:10px var(--mono);color:#d5ffdc;text-shadow:0 0 8px #36ff62;}
+#doomCursor .cursor-ring:before{top:-5px;left:8px}#doomCursor .cursor-ring:after{bottom:-5px;right:7px}
+#doomCursor .cursor-head{position:absolute;inset:5px 9px 7px;width:48px;height:62px;overflow:visible;animation:doomPulse 1.4s ease-in-out infinite;filter:drop-shadow(0 0 7px rgba(55,255,92,.8));}
+#doomCursor.cursor-hover{transform:translate(-50%,-52%) scale(1.22)}
+#doomCursor.cursor-hover .cursor-ring{box-shadow:0 0 20px rgba(36,255,89,.95),inset 0 0 14px rgba(36,255,89,.35)}
+.doom-spark{position:fixed;z-index:9998;width:4px;height:4px;pointer-events:none;border-radius:50%;background:#aaffb9;box-shadow:0 0 7px #50ff73,0 0 15px #20d84e;animation:sparkFade .55s ease-out forwards;}
+@keyframes doomPulse{0%,100%{transform:scale(.82);opacity:.8}50%{transform:scale(1.12);opacity:1}}
+@keyframes doomSpin{to{transform:rotate(360deg)}}
+@keyframes sparkFade{to{opacity:0;transform:translate(var(--sx),var(--sy)) scale(.1)}}
+
+
+/* Screenshot-inspired Doom interface: cinematic throne hero and compact HUD dashboard */
+.ambient{background:#020403 url('doomsday_background.png') center 36%/cover no-repeat}
+.ambient:after{background:linear-gradient(90deg,rgba(0,4,2,.94) 0%,rgba(0,4,2,.74) 39%,rgba(0,4,2,.2) 75%,rgba(0,4,2,.42) 100%),linear-gradient(0deg,rgba(0,4,2,.96),transparent 36%,rgba(0,4,2,.15))}
+.topbar{padding:17px clamp(22px,3.4vw,54px);background:rgba(0,4,2,.52);backdrop-filter:blur(8px)}
+.hero{min-height:540px;height:min(70vw,590px);max-width:none;padding:54px clamp(30px,3.4vw,54px) 50px;grid-template-columns:minmax(420px, .85fr) 1.15fr;gap:0;border-bottom:1px solid rgba(125,255,154,.18);overflow:hidden}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,4,2,.97) 0%,rgba(0,4,2,.9) 34%,rgba(0,4,2,.35) 62%,rgba(0,4,2,.06) 100%),linear-gradient(0deg,rgba(0,4,2,.55),transparent 40%);pointer-events:none;z-index:1}
+.hero-copy{z-index:2;max-width:660px}
+.hero .eyebrow{font-size:10px}
+.hero h1{font-size:clamp(64px,6.8vw,104px);line-height:.78;margin:24px 0 22px}
+.hero-desc{max-width:480px;font:13px/1.65 var(--mono);color:#b4c3b8}
+.hero-meta{gap:8px;margin:20px 0 28px}.tag{font-size:9px;padding:7px 9px}
+.hero-actions .btn{padding:14px 17px}
+.doom-visual{display:none}
+.dashboard-row{position:relative;z-index:4;display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(20px,2.5vw,38px);padding:28px clamp(30px,3.4vw,54px) 12px;border-bottom:1px solid rgba(125,255,154,.13);align-items:center}
+.countdown-panel{min-width:0;padding:12px 0}
+.countdown-panel>.section-kicker{margin:0 0 17px 10px;letter-spacing:.24em}
+.countdown{width:100%;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:0}
+.countdown-unit{border:1px solid rgba(125,255,154,.38);background:rgba(1,12,6,.58);padding:20px 6px 17px;text-align:center;box-shadow:inset 0 0 22px rgba(125,255,154,.035)}
+.countdown-number{font:clamp(32px,4vw,58px)/1 var(--display);font-weight:700;color:#66f59a;text-shadow:0 0 20px rgba(125,255,154,.22)}
+.countdown-unit small{font:10px var(--mono);letter-spacing:.16em;color:#8cb9a0;display:block;margin-top:13px}
+.trailer-panel{min-width:0;min-height:clamp(360px,38vw,590px);border:1px solid rgba(125,255,154,.2);border-radius:5px;padding:14px 17px 12px;background:rgba(1,7,4,.58);display:flex;flex-direction:column}
+.trailer-heading{display:flex;justify-content:space-between;gap:10px;margin:0 0 12px;font:9px var(--mono);letter-spacing:.1em;color:#6fba8a}
+.trailer-panel h3{font:600 16px var(--display);letter-spacing:.12em;margin:0 0 10px;color:#e4eee7}
+.trailer-frame{position:relative;flex:1;min-height:260px;width:100%;margin:0;aspect-ratio:auto;overflow:hidden;border:1px solid rgba(125,255,154,.3);background:#020503}.trailer-frame iframe{position:absolute;inset:0;display:block;width:100%;height:100%;min-width:100%;min-height:100%;border:0}
+#mission.section{max-width:none;padding:8px clamp(30px,2.5vw,40px) 45px;display:grid;grid-template-columns:minmax(250px,.48fr) minmax(0,1.52fr);gap:clamp(20px,3.5vw,56px);align-items:center}
+#mission .section-head{margin:0;align-self:start;padding:18px 20px 18px 10px;min-height:140px;background:linear-gradient(115deg,rgba(125,255,154,.035),transparent)}
+#mission .section-title{font-size:clamp(28px,3vw,40px);line-height:1.02}
+#mission .section-index{display:none}
+#mission .locked-file{padding:20px 24px;text-align:left;min-height:110px;display:grid;grid-template-columns:62px 1fr;grid-template-rows:auto auto auto;column-gap:18px;align-items:center}
+#mission .locked-file:before{inset:8px}
+#mission .lock-symbol{grid-row:1/4;grid-column:1;font-size:48px;margin:0;color:#62f6a0}
+#mission .locked-kicker{grid-column:2;grid-row:1}
+#mission .locked-file p{grid-column:2;grid-row:2;margin:7px 0 10px;max-width:none;font:10px/1.6 var(--mono)}
+#mission #unlockMission{grid-column:2;grid-row:3;justify-self:start;padding:9px 18px;font-size:9px}
+#mission .dossier{grid-column:2}
+#mission .section-head{grid-column:1}
+#mission #lockedFile{grid-column:2}
+#mission #missionDossier{grid-column:1/-1}
+#invitation.section{max-width:1050px;padding-top:70px}
+#invitation .countdown-label{display:none}
+@media(max-width:900px){
+ .hero{height:auto;min-height:540px;grid-template-columns:1fr;padding:58px 26px 60px}
+ .hero:before{background:linear-gradient(90deg,rgba(0,4,2,.92),rgba(0,4,2,.62)),linear-gradient(0deg,rgba(0,4,2,.7),transparent)}
+ .dashboard-row{grid-template-columns:1fr;padding:26px}
+ #mission.section{grid-template-columns:1fr;padding:18px 26px 40px;gap:12px}
+ #mission .section-head{min-height:0;padding:12px 8px}
+ #mission #lockedFile{grid-column:1}
+ #mission #missionDossier{grid-column:1}
+}
+@media(max-width:560px){
+ .topbar{padding:15px 18px}
+ .hero{min-height:550px;padding:48px 22px 40px}
+ .hero h1{font-size:clamp(58px,16vw,82px)}
+ .hero-desc{font-size:11px}
+ .dashboard-row{padding:22px 18px;gap:18px}
+ .countdown{gap:5px}
+ .countdown-unit{padding:17px 2px 14px}
+ .countdown-number{font-size:clamp(27px,8.5vw,42px)}
+ .countdown-unit small{font-size:8px;letter-spacing:.07em}
+ .trailer-panel{padding:12px;min-height:360px}.trailer-frame{min-height:260px}
+ #mission.section{padding:15px 18px 32px}
+ #mission .locked-file{grid-template-columns:42px 1fr;padding:18px 13px;column-gap:12px}
+ #mission .lock-symbol{font-size:36px}
+ #mission .locked-file p{font-size:9px}
+}
+
 </style>
 </head>
 <body>
@@ -63,6 +144,20 @@ main,.footer{position:relative;z-index:4}.intro{position:fixed;inset:0;z-index:2
     <div class="progress-track"><div class="progress-bar" id="progress"></div></div>
     <button class="btn primary" id="openTransmission">OPEN TRANSMISSION&nbsp; ↗</button>
   </div>
+</div>
+<div id="doomCursor" aria-hidden="true">
+  <div class="cursor-cross"></div><div class="cursor-ring"></div>
+  <svg class="cursor-head" viewBox="0 0 64 82" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="doomMetal" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e1e8d9"/><stop offset=".42" stop-color="#66756a"/><stop offset="1" stop-color="#17221b"/></linearGradient><filter id="greenGlow"><feGaussianBlur stdDeviation="2.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+    <path d="M32 3 52 15 57 39 48 63 32 77 16 63 7 39 12 15Z" fill="#07110a" stroke="#4dff75" stroke-width="1.5"/>
+    <path d="M32 8 47 18 51 39 43 59 32 70 21 59 13 39 17 18Z" fill="url(#doomMetal)" stroke="#c4d2c4" stroke-width="1"/>
+    <path d="M17 22 28 27 24 35 14 37ZM47 22 36 27 40 35 50 37Z" fill="#202d25" stroke="#a9b9aa" stroke-width="1"/>
+    <path d="M20 34 29 31 26 37 20 38ZM44 34 35 31 38 37 44 38Z" fill="#5bff7c" filter="url(#greenGlow)"/>
+    <path d="M28 29 32 25 36 29 35 43 40 48 32 52 24 48 29 43Z" fill="#89968a" stroke="#1b281f" stroke-width="1.2"/>
+    <path d="M23 49 29 46 35 46 41 49 38 58 32 61 26 58Z" fill="#111a14" stroke="#b0bdb0" stroke-width="1"/>
+    <path d="M26 52 38 52M27 55 37 55" stroke="#78877a" stroke-width="1.4"/>
+    <path d="M8 17 2 10M56 17 62 10M8 49 2 56M56 49 62 56" stroke="#4dff75" stroke-width="1.6" stroke-linecap="round"/>
+  </svg>
 </div>
 <header class="topbar">
   <div class="brand"><div class="brand-mark"><span>A</span></div><span>Avengers // Secure Network</span></div>
@@ -83,20 +178,24 @@ main,.footer{position:relative;z-index:4}.intro{position:fixed;inset:0;z-index:2
       <div class="hud-label one">THREAT ANALYSIS<strong>LEVEL: UNKNOWN</strong></div><div class="hud-label two">ENERGY SIGNATURE<strong>GAMMA / EMERALD</strong></div><div class="hud-label three">SUBJECT STATUS<strong>MONITORING...</strong></div><div class="crosshair"></div><div class="figure-label"><strong>FIG. 01 // UNKNOWN ENTITY</strong>VISUAL MATCH: INCONCLUSIVE</div>
     </div>
   </section>
-  <section class="section invite-section reveal" id="countdownSection" aria-labelledby="countdownHeading">
-    <div class="section-kicker" id="countdownHeading">COUNTDOWN TO DOOMSDAY</div>
-    <div class="countdown" id="doomsdayCountdown" aria-label="Countdown to December 18, 2026"><div class="countdown-unit"><span class="countdown-number" id="countDays">--</span><small>DAYS</small></div><div class="countdown-unit"><span class="countdown-number" id="countHours">--</span><small>HOURS</small></div><div class="countdown-unit"><span class="countdown-number" id="countMinutes">--</span><small>MINUTES</small></div><div class="countdown-unit"><span class="countdown-number" id="countSeconds">--</span><small>SECONDS</small></div></div>
-  </section>
-  <section class="section invite-section reveal" id="trailerSection">
-    <div class="section-kicker">01 // Official trailer</div>
-    <div class="trailer-section" aria-labelledby="trailerTitle">
-      <div class="trailer-heading"><h3 id="trailerTitle">Official Trailer Transmission</h3><span>VIDEO FILE // AV-12</span></div>
+  <section class="dashboard-row reveal" id="dashboard">
+    <div class="countdown-panel">
+      <div class="section-kicker">COUNTDOWN TO DOOMSDAY</div>
+      <div class="countdown" id="doomsdayCountdown" aria-label="Countdown to December 18, 2026">
+        <div class="countdown-unit"><span class="countdown-number" id="countDays">--</span><small>DAYS</small></div>
+        <div class="countdown-unit"><span class="countdown-number" id="countHours">--</span><small>HOURS</small></div>
+        <div class="countdown-unit"><span class="countdown-number" id="countMinutes">--</span><small>MINUTES</small></div>
+        <div class="countdown-unit"><span class="countdown-number" id="countSeconds">--</span><small>SECONDS</small></div>
+      </div>
+    </div>
+    <div class="trailer-panel">
+      <div class="trailer-heading"><span>01 // OFFICIAL TRAILER</span><span>VIDEO FILE // AV-12</span></div>
+      <h3>OFFICIAL TRAILER TRANSMISSION</h3>
       <div class="trailer-frame"><iframe src="https://www.youtube-nocookie.com/embed/irVNGjRFZGk" title="Avengers: Doomsday trailer on YouTube" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-      <p class="trailer-note">Trailer hosted by YouTube. Select play to watch; playback may depend on YouTube availability and embed settings.</p>
     </div>
   </section>
   <section class="section reveal" id="mission">
-    <div class="section-head"><div><div class="section-kicker">02 // Mission parameters</div><h2 class="section-title">Classified mission file</h2></div><div class="section-index">AV-12 / DOSSIER</div></div>
+    <div class="section-head"><div><div class="section-kicker">01 // Mission parameters</div><h2 class="section-title">Classified mission file</h2></div><div class="section-index">AV-12 / DOSSIER</div></div>
     <div class="locked-file" id="lockedFile">
       <div class="lock-symbol">⌑</div>
       <div class="locked-kicker">ENCRYPTED FILE DETECTED</div>
@@ -118,9 +217,9 @@ main,.footer{position:relative;z-index:4}.intro{position:fixed;inset:0;z-index:2
       </div>
     </div>
   </section>
-
   <section class="section invite-section reveal" id="invitation">
-    <div class="section-kicker">03 // Incoming personal message</div>
+    <div class="section-kicker">02 // Incoming personal message</div>
+
     <div class="invite-frame">
       <div class="quote-mark">“</div>
       <div class="invitation-copy"><span class="soft">Out of all the universes, timelines, and possible futures...</span><br><br><span class="highlight">You're the person I'd choose to sit beside.</span><br><br>So, Agent...</div>
@@ -153,7 +252,7 @@ main,.footer{position:relative;z-index:4}.intro{position:fixed;inset:0;z-index:2
     <div class="math-symbol" id="mathSymbol">∑ ? ∞</div>
     <h2 id="mathTitle">Fine. Prove you're a genius.</h2>
     <p class="math-problem" id="mathProblem" aria-live="polite">Prove that every non-trivial zero of the Riemann zeta function has real part exactly 1/2.</p>
-    <p class="math-explain" id="mathExplain">The Riemann Hypothesis is a famous unsolved problem.</p>
+    <p class="math-explain" id="mathExplain">The Riemann Hypothesis is a famous unsolved problem. This is a joke challenge; the button does not verify proofs. 😭</p>
     <div class="math-count" id="mathCount">ONE (1) IMPOSSIBLE QUESTION</div>
     <div class="math-actions" id="mathActions">
       <button class="btn red" id="nextMath">I SOLVED IT 🤓</button>
@@ -285,8 +384,8 @@ main,.footer{position:relative;z-index:4}.intro{position:fixed;inset:0;z-index:2
    $('outcomeIcon').textContent='✦';$('outcomeKicker').textContent='DATE CONFIRMATION // AV-12';$('outcomeTitle').innerHTML='DATE<br>LOCKED IN!';$('outcomeText').textContent='MISSION ACCEPTED. OUR DOOMSDAY DATE IS SET. ❤️';$('confirmedDate').innerHTML='FRIDAY<br>DECEMBER 18, 2026';$('outcomeSub').textContent='AVENGERS: DOOMSDAY · IN THEATERS.';
    $('outcome').classList.add('show');
  }
- // EmailJS configuration. The public key is intended for browser-side use.
- // Never put a private email-service secret in this public page.
+ // EmailJS setup: replace these placeholders with IDs from your EmailJS account.
+ // Do not put a private email-service secret in this public page.
  const EMAILJS_PUBLIC_KEY = 'Md392zhVbkpAmUrc3';
  const EMAILJS_SERVICE_ID = 'service_7w1gdrs';
  const EMAILJS_TEMPLATE_ID = 'template_gdv7zz8';
@@ -309,25 +408,20 @@ main,.footer{position:relative;z-index:4}.intro{position:fixed;inset:0;z-index:2
    button.disabled=true;button.textContent='TRANSMITTING...';status.textContent='Sending your confirmation email...';
    try{
      await emailjs.send(EMAILJS_SERVICE_ID,EMAILJS_TEMPLATE_ID,{
-       // Support either common recipient variable name in the EmailJS template.
        to_email:email,
-       email:email,
        name:email.split('@')[0],
        to_name:email.split('@')[0],
        movie_title:'Avengers: Doomsday',
        event_date:'December 18, 2026',
-       venue:'To be planned together',
-       cinema_format:'To be decided together',
+       venue:'SM Mall of Asia, Entertainment Mall, Pasay (proposed)',
+       cinema_format:'SCREENX preferred, subject to availability',
        authorization_status:'MISSION ACCEPTED',
        message:'Your mission is accepted! Our proposed Avengers: Doomsday movie date is December 18, 2026. Cinema time and tickets are still to be planned; no tickets have been booked.'
      });
      status.textContent='CONFIRMATION SENT. Check your inbox (and spam folder), Agent. ❤️';
      button.textContent='CONFIRMATION SENT ✓';
    }catch(err){
-     // Keep the diagnostic visible so the real EmailJS error can be identified.
-     console.error('EmailJS send failed:', err);
-     const detail = (err && (err.text || err.message)) ? String(err.text || err.message) : 'Unknown EmailJS error. Open the browser console for details.';
-     status.textContent='Email could not be sent. EmailJS says: ' + detail;
+     status.textContent='Email could not be sent. Check the EmailJS service, template settings, and internet connection.';
      status.classList.add('error');button.disabled=false;button.textContent='TRY AGAIN ✉';
    }
  });
@@ -359,6 +453,18 @@ main,.footer{position:relative;z-index:4}.intro{position:fixed;inset:0;z-index:2
  function resize(){const dpr=Math.min(window.devicePixelRatio||1,1.5);w=window.innerWidth;h=window.innerHeight;canvas.width=w*dpr;canvas.height=h*dpr;canvas.style.width=w+'px';canvas.style.height=h+'px';ctx.setTransform(dpr,0,0,dpr,0,0);const count=Math.min(95,Math.floor(w*h/12500));particles=Array.from({length:count},()=>({x:Math.random()*w,y:Math.random()*h,r:Math.random()*1.4+.25,v:Math.random()*.32+.08,a:Math.random()*.45+.08,green:Math.random()>.23}));}
  function draw(){ctx.clearRect(0,0,w,h);for(const p of particles){if(!reducedMotion){p.y-=p.v;if(p.y<-4){p.y=h+4;p.x=Math.random()*w}}ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=p.green?`rgba(125,255,154,${p.a})`:`rgba(255,89,104,${p.a*.7})`;ctx.fill();if(p.r>1.1){ctx.beginPath();ctx.moveTo(p.x-3,p.y);ctx.lineTo(p.x+3,p.y);ctx.strokeStyle=`rgba(125,255,154,${p.a*.25})`;ctx.stroke()}}if(!reducedMotion)raf=requestAnimationFrame(draw);}
  window.addEventListener('resize',resize);resize();draw();
+
+ // Doctor Doom mask cursor with a short emerald-magic trail.
+ const doomCursor=$('doomCursor');
+ if(doomCursor && matchMedia('(pointer:fine)').matches && !reducedMotion){
+   let lastSpark=0;
+   window.addEventListener('pointermove',e=>{
+     doomCursor.style.left=e.clientX+'px';doomCursor.style.top=e.clientY+'px';
+     const now=performance.now();
+     if(now-lastSpark>28){lastSpark=now;const spark=document.createElement('i');spark.className='doom-spark';spark.style.left=(e.clientX+(Math.random()*16-8))+'px';spark.style.top=(e.clientY+(Math.random()*16-8))+'px';spark.style.setProperty('--sx',(Math.random()*34-17)+'px');spark.style.setProperty('--sy',(Math.random()*34-17)+'px');document.body.appendChild(spark);spark.addEventListener('animationend',()=>spark.remove(),{once:true});}
+   },{passive:true});
+   document.querySelectorAll('a,button,input,select,textarea,[role="button"]').forEach(el=>{el.addEventListener('pointerenter',()=>doomCursor.classList.add('cursor-hover'));el.addEventListener('pointerleave',()=>doomCursor.classList.remove('cursor-hover'));});
+ }
  // Gentle pointer parallax, disabled on touch and reduced-motion devices.
  if(!reducedMotion && matchMedia('(pointer:fine)').matches){
    window.addEventListener('pointermove',e=>{const dx=(e.clientX/window.innerWidth-.5),dy=(e.clientY/window.innerHeight-.5);$('doomFigure').style.marginLeft=(dx*10)+'px';$('doomFigure').style.marginTop=(dy*8)+'px';},{passive:true});
