@@ -263,7 +263,7 @@
  }
  function openMathGate(){
    showMathStage(0);$('mathGate').classList.add('show');$('mathGate').setAttribute('aria-hidden','false');
-   $('noPressure').classList.add('show');$('noPressure').textContent='You clicked “I need to think.” Congratulations: your thinking assignment has arrived. 💀';
+   $('noPressure').classList.add('show');$('noPressure').textContent='';
    beep(240,.12,'sine',.02);
  }
  $('think').addEventListener('click',()=>{playMissionTrack(thinkMusic);openMathGate();});
